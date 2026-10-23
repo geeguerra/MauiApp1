@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.localPage"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+             x:DataType="vm:LocalViewModel"
+             Title="localPage">
+    <VerticalStackLayout>
+        <ScrollView>
+            <VerticalStackLayout>
+                <Label Text=" 📍 Minha Localização"/>
+
+                <Button Command="{Binding GetLocationCommand}"
+                        Text="Onde estou?"/>
+
+                <Label Text="Rua"/>
+                <Entry Text="{Binding CurrentLocation.Thoroughfare}"/>
+
+                <Label Text="Número"/>
+                <Entry Text="{Binding CurrentLocation.FeatureName}"/>
+
+                <Label Text="Bairro"/>
+                <Entry Text="{Binding CurrentLocation.SubLocality}"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
